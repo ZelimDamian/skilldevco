@@ -1,0 +1,54 @@
+/*
+ * Style twaks
+ * --------------------------------------------------
+ */
+
+.overflow-hidden
+{
+  overflow:hidden;
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+
+$off-can-width: 50;
+$on-can-width: 100 - $off-can-width;
+$visible: 10;
+$hidden: 10;
+
+@media screen and (max-width: 768px) {
+  
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: - $off-can-width * 1%; 
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%;  
+  }
+
+
+  .sidebar-offcanvas {
+    /*position: absolute;*/
+    top: 0;
+    /*width: 50%;*/
+  }
+
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: - $off-can-width * 1%; 
+  }
+  .row-offcanvas-right.active {
+    right: $on-can-width * 1%; 
+  }
+}

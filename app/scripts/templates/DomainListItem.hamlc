@@ -1,0 +1,4 @@
+.domain-list-item{class: "#{if @id == @selectedId() then 'selected' else ''}"}
+	%a{href: '#dashboard/domain/#{@id}'} 
+		!= @title
+		%i.domain-list-icon{class: 'fa fa-#{@icon or "folder-open"}'}

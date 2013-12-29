@@ -1,0 +1,15 @@
+.push-menu-wrapper
+	.push-menu-fullheight-wrapper
+		.push-menu-header.clearfix
+			.title.pull-left
+				%a.main-page(href='/#') Skilldevco
+			.btn.btn-primary.open-toggle.pull-right
+				.bar-holder	
+					%span.icon-bar
+					%span.icon-bar
+					%span.icon-bar
+		%ul.list-items
+			.menu-content
+
+.push-content-wrapper
+	.main-content.content-pushed-part

@@ -1,0 +1,4 @@
+.domain-view.container
+	.row.head
+		%p = @title
+	.row.skills.clearfix

@@ -1,0 +1,392 @@
+$navbar-height: 50;
+
+body
+{
+	/*padding-top: $navbar-height * 1px;*/
+}
+
+.container
+{
+	/*padding-left:5px;*/
+	/*padding-right:5px;*/
+}
+
+.menu-toggler
+{
+	right: -5%;
+}
+
+.hidden-width
+{
+	width:0%;
+}
+
+.smooth-1
+{
+	-webkit-transition: all 1.0s ease-out;
+    -moz-transition: all 1.0s ease-out;
+    transition: all 1.0s ease-out;
+}
+
+.smooth-025
+{
+	-webkit-transition: all 0.25s ;
+    -moz-transition: all 0.25s ;
+    transition: all 0.25s ;
+}
+
+.smooth-030
+{
+	-webkit-transition: all 0.3s ;
+    -moz-transition: all 0.3s ;
+    transition: all 0.3s ;
+}
+
+.smooth-050
+{
+	-webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+$push-menu-width-part : 60;
+$push-menu-width-full : 300;
+$push-menu-width-diff : $push-menu-width-full - $push-menu-width-part;
+
+.content-pushed-full
+{
+	-webkit-transform: translateX($push-menu-width-diff * 1px); // -60px!!!
+	-moz-transform: translateX($push-menu-width-diff * 1px);
+	transform: translateX($push-menu-width-diff * 1px);
+	/*translate3d(300px, 0, 0)*/
+
+	.open-toggle
+	{
+	  -webkit-transform: rotate(-90deg);
+	  -moz-transform: rotate(-90deg);
+	  transform: rotate(-90deg);
+	}
+}
+
+.content-pushed-part
+{
+	margin-left: $push-menu-width-part * 1px;
+}
+
+.push-menu-wrapper
+{
+	.title
+	{
+		font-size: 20px;
+		width: ($push-menu-width-full - $push-menu-width-part) * 1px;
+		background-color: rgb(50, 118, 177);	
+	}
+
+	a.main-page
+	{
+		color: rgb(189, 207, 231);
+		padding: 16px;
+		display: block;
+	}
+}
+
+.open-toggle
+{
+	position: relative;
+	border: 1px solid rgb(66, 110, 145);
+	width: $push-menu-width-part * 1px;
+	height: $push-menu-width-part * 1px;
+	padding: 15px 20px;
+	
+	border-radius: 1px;
+	
+	.bar-holder
+	{
+		float: right;
+	}
+
+	.icon-bar
+	{
+		float:left;
+		display: block;
+		width: 2px;
+		height: 28px;
+		border-radius: 1px;
+		background-color: rgb(204, 204, 204);
+	}
+
+	.icon-bar + .icon-bar
+	{
+		margin-left: 6px;
+	}
+}
+
+.menu-layout-container
+{
+	position:absolute;
+	height: 100%;
+	width: 100%;
+}
+
+
+.push-menu-rest-wrapper
+{
+	margin-left: $push-menu-width-part * 1px;
+}
+
+.push-content-wrapper {
+	
+	overflow:hidden;
+	height: 100%;
+}
+
+.content-pushed-part::before {
+	position:absolute;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgb(0,0,0);
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	
+	visibility: hidden;
+
+	content:"";
+}
+
+.content-pushed-full .content-pushed-part::before
+{
+	opacity: 0.3;
+
+	visibility: visible;
+
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+
+	z-index: 999;
+}
+
+
+.push-menu-fullheight-wrapper
+{
+	position: absolute;
+	overflow-y: normal;
+	width: ($push-menu-width-full) * 1px;
+	height: 100%;
+	z-index:99;
+	background-color: rgb(228, 235, 243);
+}
+
+.menu-main-wrapper
+{
+
+}
+
+.push-menu-wrapper
+{
+	position: absolute;
+	top: 0;
+	bottom:0;
+	left: 0;
+	overflow: hidden;
+	width: $push-menu-width-full * 1px;
+	background: white;
+	-webkit-transform: translateX(-$push-menu-width-diff * 1px); // -60px!!!
+	-moz-transform: translateX(-$push-menu-width-diff * 1px);
+	transform: translateX(-$push-menu-width-diff * 1px);
+
+	border-right: 1px solid rgb(179, 179, 179);
+	border-radius: 1px;
+}
+
+.push-menu-wrapper ul
+{
+	margin: 0;
+	padding: 0;
+	color: #5f6f81;
+	list-style: none;
+	text-transform: none;
+	font-weight: 300;
+	font-family: 'Lato', Arial, sans-serif;
+	line-height: 16px;
+
+	li {
+		display: block;
+		outline: none;
+		box-shadow: inset 0 -1px rgba(0,0,0,0.2);
+		text-shadow: 0 0 1px rgba(255,255,255,0.1);
+		font-size: 1.4em;
+		-webkit-transition: background 0.3s, box-shadow 0.3s;
+		-moz-transition: background 0.3s, box-shadow 0.3s;
+		transition: background 0.3s, box-shadow 0.3s;
+		box-shadow: inset 0px 1px 0px white, inset 0px -1px 0px rgba(0, 0, 0, 0.3);
+
+		.domain-list-icon
+		{
+			float:right;
+		}
+
+		&:hover
+		{
+			background-color:rgba(255,255,255,0.3);
+		}
+
+		a {
+			display: block;
+			padding: 22px 20px;
+			width:100%;
+		}
+	}
+}
+
+.push-menu-wrapper.menu-open
+{
+	-webkit-transform: translateX(0px); // -60px!!!
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
+.skills
+{
+	list-style: none;
+	padding: 0;
+
+	li:first-child
+	{
+		-webkit-transform: translateX(0px); // -60px!!!
+		-moz-transform: translateX(0px);
+		transform: translateX(0px);
+
+		box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+	}
+
+	li 
+	{
+		float:left;
+
+		/*-webkit-transform: translateX(-15px); // -60px!!!*/
+		/*-moz-transform: translateX(-15px);*/
+		/*transform: translateX(-15px);*/
+
+		box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.5);
+
+		a
+		{
+			display: block;
+  			padding: 22px 15px;
+  			line-height: 16px;
+
+  			background-color: rgb(205, 233, 238);
+		}
+	}
+}
+
+.domain-view.well
+{
+	padding: 0px 15px 15px 15px;
+	margin-left: 0;
+	margin-right: 0;
+	max-width: none;
+}
+
+.domain-view > .head
+{
+	padding: 20px 20px;
+	height: 60px;
+	font-weight: 200;
+	text-transform: uppercase;
+	font-size: 18px;
+
+	background-color: ghostwhite;
+}
+
+.skill-view-wrapper
+{
+	margin-top: 0;
+	padding: 0px;
+}
+
+.skill-view
+{
+	/*border: 3px solid rgb(50, 118, 177);*/
+	padding: 0px;
+
+	.skill-progress
+	{
+		position: absolute;
+		display: block;
+		background-color: rgba(50, 118, 177, 0.3);
+		color: rgb(255, 255, 255);
+		text-align: center;
+		top: 0;
+		bottom: 0;
+	}
+}
+
+.head
+{
+	.title
+	{
+		padding: 17.5px 20px;
+	}
+
+	.progress-badge
+	{
+		position: absolute;
+		width: 50px;
+		height: 25px;
+		right: 0px;
+		top: 0px;
+	}
+}
+
+.skill-view .head
+{
+	/*remember that child absolute elements are relative to first non-static parent!*/
+	position: relative;
+	background-color: rgb(183, 198, 214);
+	height: 60px;
+	font-weight: 200;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+.step-view
+{
+	border: 1px solid #b3b3b3;
+  	border-radius: 1px;
+  	margin: 0 auto;
+  	box-shadow: inset 0 1px 0 white;
+  	/*padding: 5px 8px;*/
+  	height: 60px;
+	color: rgb(42, 100, 150);
+
+	.info,.toggle
+	{
+	  padding: 15px 20px;
+	  border-left: 1px solid grey;
+	  border-right: 1px solid white;
+	  font-size: 20px;
+	}
+
+	.title
+	{
+		padding: 20px;
+	}
+}
+
+.domain-list-item.selected
+{
+	background-color: rgb(120, 169, 213);
+
+	a
+	{
+		color:white;
+	}
+}
+
+

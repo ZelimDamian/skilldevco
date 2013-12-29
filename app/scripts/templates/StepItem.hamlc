@@ -1,0 +1,7 @@
+.step-view
+	.toggle.pull-right{class:"#{if @done then 'done' else ''}"}
+		%i.fa.fa-check
+	.info.pull-right
+		%i.fa.fa-info-circle
+	.title
+		!= @title

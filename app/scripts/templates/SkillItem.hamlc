@@ -1,0 +1,9 @@
+.skill-view
+	.head
+		.title
+			!= @title
+		.skill-progress{style:'width:#{@progress}%'}
+			!= " "
+		%span.progress-badge
+			!= "#{@progress}%"
+	.steps

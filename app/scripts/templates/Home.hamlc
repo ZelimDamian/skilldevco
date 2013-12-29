@@ -1,0 +1,26 @@
+.container
+  .row
+    //.sidebar-offcanvas.row-offcanvas.row-offcanvas-left
+
+    //.col-sm-3.col-xs-1.leftMenu.smooth-025
+    //  
+    //  %ul.nav.nav-list.nav-collapse{role:'navigation'}
+    //    %li.active
+    //      %a{href:'#'} Interview skills
+    //        %span.label.label-info.pull-right 1,234
+    //    %li
+    //      != h.linkTo 'World', '#'
+    //
+    .col-xs-12.col-sm-12.mainContent
+      .row
+        .container
+          .jumbotron
+            .row
+              %h1.col-md-12 Skilldev
+              %h1.col-md-12
+                %small Develop your skills with us!
+            %p.row
+              %a.btn.btn-primary.btn-lg.col-xs-12.col-md-6.col-md-offset-3{href: '#dashboard'} Learn more
+          
+      .row
+        %p.lead HTML5 Boilerplate installed.

@@ -1,0 +1,48 @@
+%nav.navbar.navbar-default.navbar-normal-top{role:'navigation'}
+	.navbar-header
+		%button.navbar-toggle{data-toggle:'collapse', data-target:'.menu-collapsed'}
+			%span.sr-only Toggle left menu
+			%span.icon-bar
+			%span.icon-bar
+			%span.icon-bar
+
+		%a.navbar-brand{href:'#'} Skilldevco
+
+	.collapse.navbar-collapse.menu-collapsed
+		%ul.nav.navbar-nav
+			%li.active
+				%a{href:'#dashboard'}
+					%i.fa.fa-lg.fa-dashboard
+					Dashboard
+
+			%li.dropdown
+				%a.dropdown-toggle{data-toggle:'dropdown', href:'#skills'}
+					%i.fa.fa-lg.fa-tasks
+					My skills
+					%span.caret
+				%ul.dropdown-menu
+					%li
+						!= helper.linkTo 'Interview skills', '#domain/interview-skills'
+					%li
+						!= helper.linkTo 'Networking', '#domain/networking'
+					%li
+						!= helper.linkTo 'Professional profile', '#domain/professional-profile'
+					%li
+						!= helper.linkTo 'Professional competence', '#domain/professional-competence'
+
+		%form.navbar-form.navbar-left{role:'search'}
+			.form-group
+				%input.form-control{type: 'text', placeholder:'Search'}
+			%button.btn.btn-default{type: 'button'} Submit
+		
+		%ul.nav.navbar-nav.navbar-right
+			%li.dropdown
+				%a.dropdown-toggle{data-toggle:'dropdown', href:'#profile'} Profile
+					%span.caret
+				%ul.dropdown-menu
+					%li
+						!= helper.linkTo 'Edit profile', '#edit-profile'
+					%li
+						%a{href:'#logout'}
+							%i.fa.fa-power-off
+							Log out
